@@ -1,12 +1,23 @@
 #ifndef PROCESSOR_H
 #define PROCESSOR_H
 
-class Processor {
- public:
-  float Utilization();  // TODO: See src/processor.cpp
+#include "process.h"
+#include <vector>
+
+class Processor
+{
+public:
+  Processor()
+  : mProcesses{getProcesses()}
+  {
+  }
+
+  float Utilization(); // TODO: See src/processor.cpp
+  std::vector<Process> getProcesses();
 
   // TODO: Declare any necessary private members
- private:
+private:
+  std::vector<Process> mProcesses{};
 };
 
 #endif

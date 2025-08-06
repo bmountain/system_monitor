@@ -5,9 +5,10 @@
 #include <regex>
 #include <string>
 
-namespace LinuxParser {
+namespace LinuxParser
+{
 // Paths
-const std::string kProcDirectory{"/proc/"};
+const std::string kProcDirectory{"/proc"};
 const std::string kCmdlineFilename{"/cmdline"};
 const std::string kCpuinfoFilename{"/cpuinfo"};
 const std::string kStatusFilename{"/status"};
@@ -28,7 +29,8 @@ std::string OperatingSystem();
 std::string Kernel();
 
 // CPU
-enum CPUStates {
+enum CPUStates
+{
   kUser_ = 0,
   kNice_,
   kSystem_,
@@ -52,6 +54,7 @@ std::string Ram(int pid);
 std::string Uid(int pid);
 std::string User(int pid);
 long int UpTime(int pid);
-};  // namespace LinuxParser
+float CpuUtilization(int pid);
+}; // namespace LinuxParser
 
 #endif
