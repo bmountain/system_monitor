@@ -309,8 +309,9 @@ string LinuxParser::Ram(int pid)
       continue;
     }
     float size_mb = stof(value) / 1024;
-    string mem_usage = std::format("{:.1f}", size_mb);
-    return mem_usage;
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(1) << size_mb;
+    return oss.str();
   }
   return string{};
 }

@@ -19,7 +19,7 @@ string twoDigits(int n)
 // REMOVE: [[maybe_unused]] once you define the function
 string Format::ElapsedTime(long seconds)
 {
-  int h, m, s;
+  long h, m, s;
   h = seconds / 3600;
   seconds %= 3600;
   m = seconds / 60;
